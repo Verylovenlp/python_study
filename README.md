@@ -1,2 +1,1 @@
-"# python_study" 
-"# python_study" 
+수정 예정
