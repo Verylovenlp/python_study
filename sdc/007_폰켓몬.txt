@@ -1,0 +1,37 @@
+"""
+- 폰켓몬 -
+https://school.programmers.co.kr/learn/courses/30/lessons/1845
+
+1. 문제정의
+- 최대한 많은 갯수의 N/2 선택
+- 해시 문제이지만.. dict.keys()를 이용하면 쉽게 풀릴 듯
+
+2. 핵심 변수
+nums: 폰켓몬 번호가 들어오는 리스트
+
+3. 필요 조건
+- 같은 종류의 포켓몬은 가짓수로 세지 않는다
+
+"""
+
+# 해쉬 사용한 풀이
+# def solution(nums:list) -> int:
+#     hash_dict = dict()
+#     for num in nums:
+#         if not num in hash_dict:
+#             hash_dict[num] = 0
+#         hash_dict[num] += 1
+
+#     chance_of_select = int(sum(list(hash_dict.values()))/2)
+#     total_nums = len(hash_dict.keys())
+#     answer = chance_of_select if total_nums >= chance_of_select else total_nums
+#     return answer
+
+# 결국 입력된 길이와 선택할 수 있는 길이의 비교 문제
+def solution(nums:list) -> int:
+    return min(len(nums)/2, len(set(nums)))
+
+nums = [3,3,3,2,2,2]
+result = 2
+
+print(solution(nums))
